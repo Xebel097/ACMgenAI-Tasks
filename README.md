@@ -73,6 +73,10 @@ Streamlit will automatically open the app in your default browser at http://loca
 
 |__ README.md    # Project setup and documentation
 
+<p align="center">
+  <img src="main/Task1_in_action.png" alt="Alt Text" width="400" />
+</p>
+
 # Task 2: TinyVGG-vs-ResNet18
 
 # EuroSAT CNN Model Comparison
