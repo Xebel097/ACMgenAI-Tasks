@@ -108,5 +108,4 @@ Fine-tuned ResNet18 clearly outperforms TinyVGG trained from scratch, achieving 
 ## 📁 Project Structure
 
 ├── app.py          # Main Streamlit application
-|
 └── README.md       # Project setup and documentation
