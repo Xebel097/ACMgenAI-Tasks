@@ -73,6 +73,7 @@ Streamlit will automatically open the app in your default browser at http://loca
 
 |__ README.md    # Project setup and documentation
 
+## Project UI Deployed on local device
 <p align="center">
   <img src="https://github.com/Xebel097/ACMgenAI-Tasks/blob/main/Task1_in_action.png" alt="Alt Text" width="4000" />
 </p>
