@@ -51,23 +51,26 @@ Install the necessary Python packages using pip:
 pip install streamlit langchain-groq langchain-core python-dotenv
 ```
 ## 🔑 API Key Configuration
-The API key to run this chatbot is pre-defined in the .env file. The user is advised to utilise their personal key (generate one from https://console.groq.com/keys) for the project but in absolute necessetiy, one could utilise the pre-defined Groq API key.
+The API key to run this chatbot can be pre-defined in the .env file. The user is advised to utilise their personal key (generate one from https://console.groq.com/keys) for the project but in absolute necessetiy.
 
 ## 🏃 Running the App
 Run the application using Streamlit:
 
 ```bash
-streamlit run app.py
+streamlit run Task-1.py
 ```
 Streamlit will automatically open the app in your default browser at http://localhost:8501.
 
 ## 📁 Project Structure
 
-├── app.py          # Main Streamlit application
-
+├── Task-1.py          # Main Streamlit application
+|__ Task1 requirements.txt # All the dependencies one requires 
+|__ Task1.env.example # .env example file containing the sensitive keys
+|__ .gitignore  # contains the .env file
 └── README.md       # Project setup and documentation
 
 # Task 2: TinyVGG-vs-ResNet18
+
 # EuroSAT CNN Model Comparison
 
 A comparison of four CNN training setups on the [EuroSAT](https://github.com/phelber/EuroSAT) land-cover classification dataset (10 classes, RGB satellite tiles):
