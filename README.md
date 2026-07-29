@@ -77,7 +77,7 @@ Streamlit will automatically open the app in your default browser at http://loca
 <p align="center">
   <img src="https://github.com/Xebel097/ACMgenAI-Tasks/blob/main/Task1_in_action.png" alt="Alt Text" width="4000" />
 </p>
-
+---
 # Task 2: TinyVGG-vs-ResNet18
 
 # EuroSAT CNN Model Comparison
