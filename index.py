@@ -5,7 +5,7 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.chat_history import InMemoryChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 from dotenv import load_dotenv
-  load_dotenv()
+load_dotenv()
 # 1. Page Configuration
 st.set_page_config(
     page_title="India's Got Latent — Contestant AI",
@@ -29,8 +29,7 @@ st.caption("The judges are watching. Select your act persona and start the bante
 with st.sidebar:
     st.header("⚙️ Backstage Setup")
     default_key = os.getenv("GROQ_API_KEY", "")
-  api_key = st.text_input(
-      "Enter Groq API Key",
+    api_key = st.text_input("Enter Groq API Key",
       type="password",
       value=default_key,
       help="Leave blank to use your own key; defaults to a local .env if set."
