@@ -61,6 +61,11 @@ streamlit run app.py
 ```
 Streamlit will automatically open the app in your default browser at http://localhost:8501.
 
+## 📁 Project Structure
+
+├── app.py          # Main Streamlit application
+└── README.md       # Project setup and documentation
+
 # Task 2: TinyVGG-vs-ResNet18
 # EuroSAT CNN Model Comparison
 
@@ -103,9 +108,3 @@ cd <TinyVGG-vs-ResNet18>
 ## Conclusion
 
 Fine-tuned ResNet18 clearly outperforms TinyVGG trained from scratch, achieving both lower loss and higher accuracy across the board — a result of the rich, transferable features learned from ImageNet pretraining. TinyVGG benefits noticeably from data augmentation (better generalization, fewer misclassifications), while augmentation has a negligible, mixed effect on the already high-performing ResNet18. Overall, fine-tuning a pretrained model is by far the more effective strategy for this task, though a well-augmented from-scratch model can still close some of the gap.
-
-
-## 📁 Project Structure
-
-├── app.py          # Main Streamlit application
-└── README.md       # Project setup and documentation
