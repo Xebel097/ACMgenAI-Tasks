@@ -51,7 +51,7 @@ Install the necessary Python packages using pip:
 pip install streamlit langchain-groq langchain-core python-dotenv
 ```
 ## 🔑 API Key Configuration
-The API key to run this chatbot is pre-defined in the .env.example file. The user is advised to utilise their personal key (generate one from https://console.groq.com/keys) for the project but in absolute necessetiy, one could utilise the pre-defined Groq API key.
+The API key to run this chatbot is pre-defined in the .env file. The user is advised to utilise their personal key (generate one from https://console.groq.com/keys) for the project but in absolute necessetiy, one could utilise the pre-defined Groq API key.
 
 ## 🏃 Running the App
 Run the application using Streamlit:
