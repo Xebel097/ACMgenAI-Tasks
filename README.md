@@ -63,7 +63,7 @@ Streamlit will automatically open the app in your default browser at http://loca
 
 ## 📁 Project Structure
 
-├── Task-1.py          # Main Streamlit application
+|__ Task-1.py          # Main Streamlit application
 
 |__ Task1 requirements.txt # All the dependencies one requires
 
@@ -71,7 +71,7 @@ Streamlit will automatically open the app in your default browser at http://loca
 
 |__ .gitignore  # contains the .env file
 
-└── README.md       # Project setup and documentation
+|__ README.md    # Project setup and documentation
 
 # Task 2: TinyVGG-vs-ResNet18
 
