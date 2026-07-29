@@ -97,6 +97,35 @@ cd <TinyVGG-vs-ResNet18>
 2. Open `eurosat_cnn_comparison.ipynb` in Jupyter, or upload it to Colab, and run all cells top to bottom. The dataset (EuroSAT, via Kaggle) downloads automatically in the setup cell.
 3. GPU recommended — the notebook auto-detects CUDA and falls back to CPU otherwise.
 
+## Model Architectures
+ 
+### TinyVGG (trained from scratch)
+ 
+A small VGG-style CNN with no pretrained weights — everything is learned from the EuroSAT data alone. Input: 64×64×3, `hidden=32`.
+ 
+| Block | Layers |
+|---|---|
+| Block 1 | Conv(3→32, 3×3) → ReLU → Conv(32→32, 3×3) → ReLU → MaxPool(2×2) |
+| Block 2 | Conv(32→64, 3×3) → ReLU → Conv(64→64, 3×3) → ReLU → MaxPool(2×2) |
+| Block 3 | Conv(64→128, 3×3) → ReLU → MaxPool(2×2) |
+| Classifier | Flatten → Dropout(0.3) → Linear(→10 classes) |
+ 
+Each block doubles the channel depth while halving spatial size via max-pooling — a classic VGG pattern (stack small 3×3 convs, then downsample). After 3 pooling stages, a 64×64 image shrinks to 8×8, giving a flattened feature vector of `8 × 8 × 128 = 8192`, which feeds into a single linear layer for the 10-class output. Dropout before the final layer is the only regularization beyond data augmentation.
+ 
+This model acts as the "control" — no ImageNet priors, no transfer learning — showing what's achievable learning purely from EuroSAT's own signal.
+ 
+### ResNet18 (fine-tuned, pretrained)
+ 
+A standard ResNet18, initialized with ImageNet-pretrained weights, then adapted to this task.
+ 
+- The full ResNet18 backbone (4 stages of residual blocks with skip connections, which let gradients bypass layers and allow much deeper training without degradation) is kept largely intact.
+- Only the final fully-connected layer is replaced:
+```python
+  model.fc = nn.Linear(in_feats, num_classes)  # in_feats=512 → 10
+```
+- Input is resized to 224×224 (ResNet's native ImageNet input size) and normalized with ImageNet mean/std, since the backbone's learned filters expect that same input distribution it was trained on.
+- The whole network is fine-tuned end-to-end (not frozen) — but starting from weights that already encode general visual features (edges, textures, shapes) rather than random initialization.
+This model wins not just because it's deeper, but because its pretrained filters already generalize well to visual patterns beyond ImageNet's specific classes (including satellite imagery textures) — reflected in the ~98% vs ~91-93% test accuracy gap over TinyVGG.
 ## Results
 
 | Model | Augmentation | Test Loss | Test Accuracy |
