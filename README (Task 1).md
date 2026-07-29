@@ -1,4 +1,4 @@
-# 🎙️ India's Got Latent — AI Stage
+# Task 1: 🎙️ India's Got Latent — AI Stage
 
 An interactive Streamlit web application powered by **LangChain** and **Groq (Llama-3.3-70B)**. Select an act persona—ranging from a comedy roast bot to an Elizabethan playwright—and banter with an AI contestant live on stage with full conversation memory.
 
