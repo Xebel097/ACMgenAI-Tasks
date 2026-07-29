@@ -64,6 +64,7 @@ Streamlit will automatically open the app in your default browser at http://loca
 ## 📁 Project Structure
 
 ├── app.py          # Main Streamlit application
+
 └── README.md       # Project setup and documentation
 
 # Task 2: TinyVGG-vs-ResNet18
